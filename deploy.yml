@@ -6,7 +6,7 @@
   	file:
     	path: /opt/deploy
     	state: directory
-    	mode: '0755'
+    	mode: '0777'
 
 	- name: Copy the artifact to the deployment directory
   	copy:
