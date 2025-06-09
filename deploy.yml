@@ -1,5 +1,5 @@
 - name: Deploy artifact
-  hosts: 127.0.0.1
+  hosts: localhost
   become: true  # If you need sudo/root access
   tasks:
 	- name: Ensure the deployment directory exists
@@ -10,4 +10,5 @@
 
 	- name: Copy the artifact to the deployment directory
   	copy:
-    	src: /var/lib/jenkins/workspace/mvn2/target/HelloMaven-1.0-SNAPSHOT.jar  # 
+    	src: /var/lib/jenkins/workspace/mvn2/target/HelloMaven-1.0-SNAPSHOT.jar  # Replace with actual file
+    	dest: /opt/deploy/likitha.jar
