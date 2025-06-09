@@ -1,0 +1,13 @@
+- name: Deploy artifact
+  hosts: 127.0.0.1
+  become: true  # If you need sudo/root access
+  tasks:
+	- name: Ensure the deployment directory exists
+  	file:
+    	path: /opt/deploy
+    	state: directory
+    	mode: '0755'
+
+	- name: Copy the artifact to the deployment directory
+  	copy:
+    	src: /var/lib/jenkins/workspace/mvn2/target/HelloMaven-1.0-SNAPSHOT.jar  # 
